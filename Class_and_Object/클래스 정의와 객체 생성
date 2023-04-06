@@ -1,0 +1,40 @@
+class Car {
+	var color : String = ""
+	var speed : Int = 0
+    
+	fun upSpeed(value : Int) {
+		if (speed + value >= 200)
+			speed = 200
+		else
+			speed += value
+	}
+	fun downSpeed(value : Int) {
+        if (speed - value <= 0)
+        	speed = 0
+        else
+        	speed -= value
+    }
+}
+
+fun main() {
+    var car1 : Car = Car()
+    car1.color = "빨강"
+    car1.speed = 0
+    
+    var car2 : Car = Car()
+    car2.color = "검정"
+    car2.speed = 0
+    
+    var car3 : Car = Car()
+    car3.color = "하양"
+    car3.speed = 0
+    
+    car1.upSpeed(59)
+    println("자동차1의 색상은 " + car1.color + "이며, 속도는 " + car1.speed + "km입니다.")
+    
+    car2.upSpeed(123)
+    println("자동차2의 색상은 " + car2.color + "이며, 속도는 " + car2.speed + "km입니다.")
+    
+    car3.upSpeed(190)
+    println("자동차3의 색상은 " + car3.color + "이며, 속도는 " + car3.speed + "km입니다.")
+}
