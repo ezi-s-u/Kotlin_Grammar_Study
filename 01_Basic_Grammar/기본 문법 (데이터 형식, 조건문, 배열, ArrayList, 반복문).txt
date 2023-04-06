@@ -1,0 +1,63 @@
+fun main() {
+    
+    var one = Array<Int>(4, {0})
+    one[0] = 10
+    one[3] = 20
+    for(i in one.indices)
+    	println(one[i])
+    
+    var two = Array<IntArray>(3, {IntArray(4,{2})}) // {} 초기값자리에 IntArray라는 객체를 이용해 2차원배열 구현
+    //   3행 4열의 2차원 배열
+    //   row의 index: 0~2
+    //   col의 index: 0~3
+    two[1][2] = 100
+    two[2][3] = 200
+    
+    println()
+    
+    for(i in two.indices) {
+        for(j in two[i].indices) {
+            print(two[i][j])
+        }
+        println()
+    }
+    
+    println()
+    
+    for((i, row) in two.withIndex()) {
+        for((j, col) in row.withIndex()) {
+        	print("($i, $j) = $col\t")   // 문자열안에 변수의 값 출력할 때 $사용
+    	}
+        println()
+    }
+    
+    println()
+    
+    var three = ArrayList<Int>(4)
+    
+    three.add(10)
+    three.add(20)
+    three.add(213)
+    var sum = 0
+    
+    for(num in three) {
+        sum += num
+    }
+    println(sum)
+    
+    println()
+    
+   var four : Array<String> = arrayOf("하나","둘","셋")
+   for(i in 0..2 step 1) {
+       println(four[i])
+   }
+   
+   println()
+   
+   var k : Int = 0
+
+   while(k < four.size){
+       println(four[k])
+       k++
+   }
+}
